@@ -1,3 +1,4 @@
+
 import java.util.List;
 import java.io.*;
 
@@ -17,7 +18,7 @@ public class Main {
             int winCount = 0;
             int loseCount = 0;
             
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i <= 100; i++)// as game starts with zero increase the i value to 1 and assign = operator// 
             {
             	String name = "Fred";
             	int balance = 100;
@@ -76,11 +77,14 @@ public class Main {
             totalWins += winCount;
             totalLosses += loseCount;
 
+	System.out.println("Press 'q' to quit the game or press any key to restart the game");
             String ans = console.readLine();
             if (ans.equals("q")) break;
-        } //while true
-        
+        } 
+//while true
+       
         System.out.println(String.format("Overall win rate = %.1f%%", (float)(totalWins * 100) / (totalWins + totalLosses)));
+	System.out.println("Thank you for Playing the Game");
 	}
 
 }
