@@ -28,7 +28,8 @@ public class Player {
 	}
 	
 	public boolean balanceExceedsLimitBy(int amount) {
-		return (balance - amount > limit);
+		return (balance - amount >= limit);
+// game should end when balance is zero but the game ending before the balance become zero by adding = operator return bug will be fixed
 	}
 	
 	public void takeBet(int bet) {
