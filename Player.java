@@ -3,6 +3,7 @@ public class Player {
 	private String name;
 	private int balance;
 	private int limit;
+	private int bet;
 	
 	public Player(String name, int balance) {
 		if (name == null || name .isEmpty()) throw new IllegalArgumentException("Name cannot be null or empty");
@@ -38,7 +39,7 @@ public class Player {
 	
 	public void receiveWinnings(int winnings) {
 		if (winnings < 0) throw new IllegalArgumentException("Winnings cannot be negative.");
-		balance = balance + bet + winnings;	
+		balance = balance+bet + winnings;	
 // correcting the bug that stops increasing the balance when he won bet	
 	}
 	
