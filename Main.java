@@ -7,9 +7,6 @@ public class Main {
 		
 	   BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
 
-        Dice d1 = new Dice();
-        Dice d2 = new Dice();
-        Dice d3 = new Dice();
 
         Player player = new Player("Fred", 100);
         Game game = new Game(d1, d2, d3);
@@ -23,7 +20,7 @@ public class Main {
             int winCount = 0;
             int loseCount = 0;
             
-            for (int i = 0; i < 1; i++)
+            for (int i = 0; i < 100; i++)
             {
             	String name = "Fred";
             	int balance = 100;
@@ -39,7 +36,12 @@ public class Main {
                 int turn = 0;
                 while (player.balanceExceedsLimitBy(bet) && player.getBalance() < 200)
                 {
-                    turn++;                    
+                    turn++;  
+			
+        		Dice d1 = new Dice();
+        		Dice d2 = new Dice();
+        		Dice d3 = new Dice();
+// to change the dice showing same rolled we should intialize inside while loop not outside                  
                 	DiceValue pick = DiceValue.getRandom();
                    
                 	System.out.printf("Turn %d: %s bet %d on %s\n",
@@ -51,9 +53,9 @@ public class Main {
                     System.out.printf("Rolled %s, %s, %s\n",
                     		cdv.get(0), cdv.get(1), cdv.get(2));
                     
-                    if (winnings-bet > 0) {
+                    if (winnings > 0) {
 	                    System.out.printf("%s won %d, balance now %d\n\n",
-	                    		player.getName(), winnings-bet, player.getBalance());
+	                    		player.getName(), winnings, player.getBalance());
 	                	winCount++; 
                     }
                     else {
